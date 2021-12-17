@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.util.Locale;
 
 public class AddAccountantController {
+    // Overview: controls the interactivity of accountant fxml file(User interface)
 
     @FXML
     MFXTextField username, password, firstName, lastName, phone;
@@ -27,6 +28,8 @@ public class AddAccountantController {
 
 
     public void initialize() {
+        // EFFECTS: initializes data members
+
         gender.getItems().addAll(Gender.Male, Gender.Female);
         gender.getSelectionModel().selectItem(Gender.Male);
 
@@ -38,11 +41,10 @@ public class AddAccountantController {
     }
 
     public void onMouseClicked(MouseEvent mouseEvent) {
+        // EFFECTS: handles click event on the scene graph
+
         Button btn = (Button) mouseEvent.getSource();
         String btnText = btn.getText().toLowerCase(Locale.ROOT).trim();
-        System.out.println("btnText" + btnText);
-        Scene s = btn.getScene();
-        Stage stage = (Stage) s.getWindow();
 
         switch (btnText) {
             case "add accountant" -> {
@@ -92,8 +94,5 @@ public class AddAccountantController {
 
             }
         }
-
     }
-
-
 }

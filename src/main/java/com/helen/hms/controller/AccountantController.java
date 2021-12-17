@@ -19,6 +19,7 @@ import java.time.LocalDate;
 import java.util.Locale;
 
 public class AccountantController {
+    // Overview: controls the interactivity of accountant fxml file(User interface)
 
     @FXML
     TableView<Doctor> tableView = new TableView<>();
@@ -39,8 +40,9 @@ public class AccountantController {
 
     LocalDate ld = LocalDate.of(2021, 10, 15);
 
-
     public void initialize() {
+        // MODIFIES: initializes data members
+
         // set columns factory
         setColumsValueFactory();
 
@@ -51,6 +53,8 @@ public class AccountantController {
     }
 
     private void addDoctors() {
+        // MODIFIES: tableView
+
 //        patient placeholder when there is no patient in db
         PersonFactory.getDoctors().add(new Doctor(1, "uche",  "12345", "uche", "okafor", Qualification.BSC, 9012123123l, Gender.Male, Specialty.Gynecologist));
         PersonFactory.getDoctors().add(new Doctor(2, "sandra",  "12345", "sandra", "doe", Qualification.MSC, 9012123123l, Gender.Female, Specialty.Cardiologist));

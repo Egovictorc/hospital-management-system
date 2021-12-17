@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.util.Locale;
 
 public class UpdateDoctorController {
+// Overview: controls the interactivity of updateDoctor fxml file(User interface)
 
     @FXML
     MFXTextField username, password, firstName, lastName, phone;
@@ -29,8 +30,8 @@ public class UpdateDoctorController {
     Doctor d = PersonFactory.getSelectedDoctor();
 
     @FXML
-    public void initialize() throws IOException {
-
+    public void initialize() {
+        // EFFECTS: initializes data members
 
         gender.getItems().addAll(Gender.Male, Gender.Female);
         gender.getSelectionModel().selectItem(Gender.Male);
@@ -53,12 +54,12 @@ public class UpdateDoctorController {
         }
     }
 
-
     public void onMouseClicked(MouseEvent mouseEvent) {
+        // EFFECTS: handles click event on the scene graph
+
         Button btn = (Button) mouseEvent.getSource();
         String btnText = btn.getText().toLowerCase(Locale.ROOT);
         System.out.println("btnText" + btnText);
-
 
         switch (btnText) {
             case "save" -> {
@@ -112,7 +113,5 @@ public class UpdateDoctorController {
 
             }
         }
-
-
     }
 }

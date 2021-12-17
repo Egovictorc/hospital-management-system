@@ -23,6 +23,7 @@ import java.time.LocalDate;
 import java.util.Locale;
 
 public class UpdatePatientController {
+// Overview: controls the interactivity of updatePatient fxml file(User interface)
 
     @FXML
     VBox root;
@@ -34,7 +35,8 @@ public class UpdatePatientController {
     Patient p = PersonFactory.getSelectedPatient();
 
     @FXML
-    public void initialize() throws IOException {
+    public void initialize() {
+        // EFFECTS: initializes data members
 
         if (p != null) {
             firstName.setText(p.getFirstName());
@@ -44,8 +46,9 @@ public class UpdatePatientController {
         }
     }
 
-
     public void onMouseClicked(MouseEvent mouseEvent) {
+        // EFFECTS: handles click event on the scene graph
+
         Button btn = (Button) mouseEvent.getSource();
         String btnText = btn.getText().toLowerCase(Locale.ROOT);
         System.out.println("btnText" + btnText);
@@ -92,7 +95,6 @@ public class UpdatePatientController {
 
             }
         }
-
 
     }
 }

@@ -10,8 +10,10 @@ import java.io.IOException;
 import java.util.Locale;
 
 public class AdminController {
+    // Overview: controls the interactivity of admin fxml file(User interface)
 
     public void onMouseClicked(MouseEvent mouseEvent) {
+        // EFFECTS: handles click event on the scene graph
 
         Button btn = (Button) mouseEvent.getSource();
         String btnText = btn.getText().toLowerCase(Locale.ROOT);
@@ -26,6 +28,4 @@ public class AdminController {
         }
         UtilityClass.getHistory().add("admin");
     }
-
-
 }

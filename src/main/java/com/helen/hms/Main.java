@@ -11,11 +11,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Main extends Application {
-
+    //Overview: Entry point of JavaFx application
     private static Scene scene;
 
     @Override
     public void start(Stage stage) throws IOException {
+        // MODIFIES: stage
+        // EFFECTS: starts the javaFx application instance
+
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/main.fxml"));
         scene = new Scene(fxmlLoader.load());
         stage.setTitle("H & A Specialist Hospital");
@@ -38,10 +41,12 @@ public class Main extends Application {
     }
 
     public static void setRoot(String fxml) throws IOException {
+        // EFFECTS: sets the root node of the scene
         scene.setRoot(loadFXML(fxml));
     }
 
     private static Parent loadFXML(String fxml) throws IOException {
+        // EFFECTS: loads the specified fxml file, throws IOException if fxml file is not found
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("fxml/" + fxml + ".fxml"));
         return fxmlLoader.load();
     }

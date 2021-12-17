@@ -12,9 +12,10 @@ import com.helen.hms.Main;
 import com.helen.hms.service.UtilityClass;
 
 public class HomeController {
-
+    // Overview: controls the interactivity of doctor fxml file(User interface)
 
     public void onMouseClicked(MouseEvent mouseEvent) {
+        // EFFECTS: handles click event on the scene graph
 
         Button btn = (Button) mouseEvent.getSource();
         String btnText = btn.getText().toLowerCase(Locale.ROOT);

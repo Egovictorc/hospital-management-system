@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.util.Locale;
 
 public class UpdateProfileController {
+// Overview: controls the interactivity of updateDoctor fxml file(User interface)
 
     @FXML
     MFXTextField firstName, lastName, email, id, phone, address;
@@ -32,7 +33,8 @@ public class UpdateProfileController {
     @FXML
     private Label welcome;
     @FXML
-    public void initialize() throws IOException {
+    public void initialize() {
+        // EFFECTS: handles click event on the scene graph
 
         gender.getItems().addAll(Gender.Male, Gender.Female);
         department.getItems().addAll(Department.account, Department.admin, Department.doctor, Department.receptionist, Department.nurse);
@@ -56,6 +58,8 @@ public class UpdateProfileController {
 
 
     public void onMouseClicked(MouseEvent mouseEvent) {
+        // EFFECTS: handles click event on the scene graph
+
         Button btn = (Button) mouseEvent.getSource();
         String btnText = btn.getText().toLowerCase(Locale.ROOT).trim();
         System.out.println("btnText" + btnText);

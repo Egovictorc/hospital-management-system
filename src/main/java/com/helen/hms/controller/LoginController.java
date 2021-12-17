@@ -23,6 +23,8 @@ import java.util.Locale;
 import static com.helen.hms.service.UtilityClass.changeToPrevious;
 
 public class LoginController {
+    // Overview: controls the interactivity of login fxml file(User interface)
+
     @FXML
     Button login;
     @FXML
@@ -30,7 +32,7 @@ public class LoginController {
     Alert alert;
 
     public void onMouseClicked(MouseEvent mouseEvent) {
-
+        // EFFECTS: handles click event on the scene graph
         Button btn = (Button) mouseEvent.getSource();
         String btnText = btn.getText().toLowerCase(Locale.ROOT);
         System.out.println("btnText" + btnText);
@@ -72,8 +74,6 @@ public class LoginController {
             default:
                 UtilityClass.changeTo("signup");
         }
-
         UtilityClass.updateHistory("login");
-
     }
 }

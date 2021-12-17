@@ -23,6 +23,7 @@ import java.util.ListIterator;
 import java.util.Locale;
 
 public class DoctorController {
+    // Overview: controls the interactivity of doctor fxml file(User interface)
 
     @FXML
     TableView<Doctor> tableView = new TableView<>();
@@ -44,6 +45,8 @@ public class DoctorController {
     ListIterator<Doctor> doctorListIterator;
 
     public void initialize() {
+        // EFFECTS: initializes data members
+
         // set columns factory
         setColumsValueFactory();
         // initialize doctors collection
@@ -53,6 +56,9 @@ public class DoctorController {
     }
 
     private void addDoctors() {
+        //MODIFIES: tableView
+        // EFFECTS: populate tableView with doctors data from db
+
 //        doctors placeholder when there is no doctor in db
         PersonFactory.getDoctors().add(new Doctor(1, "uche", "12345", "uche", "okafor", Qualification.BSC, 9012123123l, Gender.Male, Specialty.Gynecologist));
         PersonFactory.getDoctors().add(new Doctor(2, "sandra", "12345", "sandra", "doe", Qualification.MSC, 9012123123l, Gender.Female, Specialty.Cardiologist));
@@ -78,6 +84,8 @@ public class DoctorController {
     }
 
     private void setColumsValueFactory() {
+        // MODIFIES: data members
+        // EFFECTS: sets cellvalueFactory on data memebers
         id.setCellValueFactory(new PropertyValueFactory<Doctor, Integer>("id"));
         firstName.setCellValueFactory(new PropertyValueFactory<Doctor, String>("firstName"));
         lastName.setCellValueFactory(new PropertyValueFactory<Doctor, String>("lastName"));
@@ -88,6 +96,8 @@ public class DoctorController {
     }
 
     public void onMouseClicked(MouseEvent mouseEvent) {
+        // EFFECTS: handles click event on the scene graph
+
         Button btn = (Button) mouseEvent.getSource();
         String btnText = btn.getText().toLowerCase(Locale.ROOT);
         System.out.println("btnText" + btnText);
@@ -139,5 +149,4 @@ public class DoctorController {
         }
         UtilityClass.getHistory().add("admin");
     }
-
 }

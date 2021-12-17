@@ -31,6 +31,7 @@ import java.util.ListIterator;
 import java.util.Locale;
 
 public class PatientController {
+    // Overview: controls the interactivity of doctor fxml file(User interface)
 
     @FXML
     TableView<Patient> tableView = new TableView<>();
@@ -47,6 +48,8 @@ public class PatientController {
     ListIterator<Patient> patientListIterator;
 
     public void initialize() {
+        // EFFECTS: initializes data members
+
         // set columns factory
         setColumsValueFactory();
         // add patients
@@ -54,6 +57,9 @@ public class PatientController {
     }
 
     private void addPatients() {
+        //MODIFIES: tableView
+        // EFFECTS: populate tableView with patients data from db
+
 //        patient placeholder when there is no patient in db
         PersonFactory.getPatients().add(new Patient(1, "uche", "okafor", "Malaria", ld, false, 101));
         PersonFactory.getPatients().add(new Patient(2, "sandra", "doe", "typhoid", ld, false, 102));
@@ -77,6 +83,9 @@ public class PatientController {
     }
 
     private void setColumsValueFactory() {
+        // MODIFIES: data members
+        // EFFECTS: sets cellvalueFactory on data memebers
+
         id.setCellValueFactory(new PropertyValueFactory<Patient, Integer>("id"));
         doctorId.setCellValueFactory(new PropertyValueFactory<Patient, Integer>("doctorId"));
         firstName.setCellValueFactory(new PropertyValueFactory<Patient, String>("firstName"));
@@ -87,6 +96,8 @@ public class PatientController {
     }
 
     public void onMouseClicked(MouseEvent mouseEvent) {
+        // EFFECTS: handles click event on the scene graph
+
         Button btn = (Button) mouseEvent.getSource();
         String btnText = btn.getText().toLowerCase(Locale.ROOT);
         System.out.println("btnText" + btnText);

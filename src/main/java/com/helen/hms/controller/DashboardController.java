@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.util.Locale;
 
 public class DashboardController {
+    // Overview: controls the interactivity of dashboard fxml file(User interface)
 
     @FXML
     private Label welcome;
@@ -29,7 +30,7 @@ public class DashboardController {
     MFXButton manage;
 
     public void initialize() {
-        //Staff s = DBStaff.getStaffByUsername(PersonFactory.getSelectedStaff().getUsername());
+        // EFFECTS: initializes data members
         Staff s = PersonFactory.getSelectedStaff();
         System.out.println("from dashboard "+s);
 
@@ -51,6 +52,8 @@ public class DashboardController {
     }
 
     public void onMouseClicked(MouseEvent mouseEvent) {
+        // EFFECTS: handles click event on the scene graph
+
         Button btn = (Button) mouseEvent.getSource();
         String btnText = btn.getText().toLowerCase(Locale.ROOT).trim();
         System.out.println("btnText" + btnText);
@@ -74,6 +77,4 @@ public class DashboardController {
             }
         }
     }
-
-
 }

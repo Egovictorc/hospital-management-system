@@ -18,6 +18,7 @@ import java.time.LocalDate;
 import java.util.Locale;
 
 public class AddDoctorController {
+    // Overview: controls the interactivity of addDoctor fxml file(User interface)
 
     @FXML
     MFXTextField username, password, firstName, lastName, phone;
@@ -30,6 +31,8 @@ public class AddDoctorController {
 
 
     public void initialize() {
+        // EFFECTS: initializes data members
+
         gender.getItems().addAll(Gender.Male, Gender.Female);
         gender.getSelectionModel().selectItem(Gender.Male);
 
@@ -41,6 +44,8 @@ public class AddDoctorController {
     }
 
     public void onMouseClicked(MouseEvent mouseEvent) {
+        // EFFECTS: handles click event on the scene graph
+
         Button btn = (Button) mouseEvent.getSource();
         String btnText = btn.getText().toLowerCase(Locale.ROOT).trim();
         System.out.println("btnText" + btnText);
@@ -95,8 +100,5 @@ public class AddDoctorController {
 
             }
         }
-
     }
-
-
 }

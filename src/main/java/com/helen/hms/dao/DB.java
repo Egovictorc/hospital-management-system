@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 abstract class DB<T> {
+    // Overview: manages database connectivity
+
     // static String URL = "jdbc:mysql://us-cdbr-east-04.cleardb.com:3306/heroku_4611fbb40488d8a?useSSL=false", USERNAME = "b88107cc611a86",
     //  PASSWORD = "c6d51887";
 
@@ -32,6 +34,7 @@ abstract class DB<T> {
     abstract int updatePerson(T updatedPerson);
 
     public static Connection connect() {
+        // EEFECTS: establishes connection to database, returns Connection object
         try {
             DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
             // remote connection
@@ -44,6 +47,8 @@ abstract class DB<T> {
     }
 
     public ResultSet getAll(String s) {
+        // EEFECTS: returns resultset from database
+
         String sql = "SELECT * FROM " + s;
         ResultSet rs = null;
         try {

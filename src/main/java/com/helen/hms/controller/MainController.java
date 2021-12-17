@@ -17,10 +17,13 @@ import javafx.util.Duration;
 import java.io.IOException;
 
 public class MainController {
+// Overview: controls the interactivity of login fxml file(User interface)
 
     @FXML
     Label title;
     public void initialize() {
+        // EFFECTS: initializes data members
+
         Timeline fiveSecondsWonder = new Timeline(
                 new KeyFrame(Duration.seconds(5),
                         new EventHandler<ActionEvent>() {

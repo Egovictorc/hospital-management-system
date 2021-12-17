@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.util.Locale;
 
 public class UpdateAccountantController {
+// Overview: controls the interactivity of updateAccountant fxml file(User interface)
 
     @FXML
     MFXTextField username, password, firstName, lastName, phone;
@@ -29,8 +30,7 @@ public class UpdateAccountantController {
 
     @FXML
     public void initialize() throws IOException {
-
-        System.out.println(d);
+        // EFFECTS: initializes data members
 
         gender.getItems().addAll(Gender.Male, Gender.Female);
         gender.getSelectionModel().selectItem(Gender.Male);
@@ -55,10 +55,11 @@ public class UpdateAccountantController {
 
 
     public void onMouseClicked(MouseEvent mouseEvent) {
+        // EFFECTS: handles click event on the scene graph
+
         Button btn = (Button) mouseEvent.getSource();
         String btnText = btn.getText().toLowerCase(Locale.ROOT);
         System.out.println("btnText" + btnText);
-
 
         switch (btnText) {
             case "save" -> {
@@ -112,7 +113,5 @@ public class UpdateAccountantController {
 
             }
         }
-
-
     }
 }

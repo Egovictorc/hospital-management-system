@@ -24,11 +24,14 @@ import java.time.LocalDate;
 import java.util.Locale;
 
 public class AddPatientController {
+    // Overview: controls the interactivity of addPatient fxml file(User interface)
 
     @FXML
     MFXTextField firstName, lastName, sickness, doctorId;
 
     public void onMouseClicked(MouseEvent mouseEvent) {
+        // EFFECTS: handles click event on the scene graph
+
         Button btn = (Button) mouseEvent.getSource();
         String btnText = btn.getText().toLowerCase(Locale.ROOT).trim();
         System.out.println("btnText" + btnText);
@@ -73,8 +76,5 @@ public class AddPatientController {
 
             }
         }
-
     }
-
-
 }
