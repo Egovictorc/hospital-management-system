@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="30.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.helen.hms.controller.MainController">
+   <children>
+      <Label fx:id="title" text="Welcome to">
+         <font>
+            <Font name="Brush Script MT Italic" size="30.0" />
+         </font>
+      </Label>
+      <Label text="H &amp; A Specialist Hospital" textFill="#1a4664">
+         <font>
+            <Font name="Baskerville Old Face" size="36.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/ajax-loader.gif" />
+         </image>
+      </ImageView>
+   </children>
+</VBox>

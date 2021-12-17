@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXLabel?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.helen.hms.controller.DoctorController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="800.0" prefWidth="356.0" spacing="20.0" style="-fx-background-color: #2e86c1;">
+         <children>
+            <MFXLabel lineStrokeWidth="0.0" maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent;" styleClass="white" text="Search Doctor">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </MFXLabel>
+            <MFXButton fx:id="add" maxWidth="1.7976931348623157E308" onMouseClicked="#onMouseClicked" style="-fx-background-color: transparent;" text="Add Doctor" textFill="WHITE">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
+            <MFXButton maxWidth="1.7976931348623157E308" onMouseClicked="#onMouseClicked" style="-fx-background-color: transparent;" text="Update Doctor" textFill="WHITE">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
+            <MFXButton maxWidth="1.7976931348623157E308" onMouseClicked="#onMouseClicked" style="-fx-background-color: transparent;" text="Remove Doctor" textFill="WHITE">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
+            <MFXLabel lineStrokeWidth="0.0" maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent;" styleClass="white" text="All Doctors">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </MFXLabel>
+            <MFXButton maxWidth="1.7976931348623157E308" onMouseClicked="#onMouseClicked" style="-fx-background-color: transparent;" text="Sign out" textFill="WHITE">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
+         </children></VBox>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="800.0" prefWidth="861.0" HBox.hgrow="ALWAYS">
+         <children>
+            <HBox prefHeight="60.0" prefWidth="1044.0">
+               <children>
+                  <MFXTextField lineStrokeWidth="0.0" maxHeight="1.7976931348623157E308" promptText="Doctor's Id">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </MFXTextField>
+                  <MFXButton maxHeight="1.7976931348623157E308" text="Search">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </MFXButton>
+               </children>
+            </HBox>
+            <MFXLabel animateLines="false" maxWidth="1.7976931348623157E308" text="Doctors' List">
+               <font>
+                  <Font size="42.0" />
+               </font>
+            </MFXLabel>
+            <TableView fx:id="tableView" prefHeight="687.0" prefWidth="1044.0" tableMenuButtonVisible="true" VBox.vgrow="ALWAYS">
+              <columns>
+                <TableColumn fx:id="id" prefWidth="75.0" text="Doctor Id" />
+                <TableColumn fx:id="firstName" prefWidth="75.0" text="First Name" />
+                  <TableColumn fx:id="lastName" prefWidth="75.0" text="Last Name" />
+                  <TableColumn fx:id="qualification" prefWidth="75.0" text="Qualification" />
+                  <TableColumn fx:id="phone" prefWidth="75.0" text="Phone Number" />
+                  <TableColumn fx:id="specialty" prefWidth="75.0" text="Specialty" />
+                  <TableColumn fx:id="gender" prefWidth="75.0" text="Gender" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </VBox>
+   </children>
+</HBox>

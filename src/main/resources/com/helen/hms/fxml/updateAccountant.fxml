@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXComboBox?>
+<?import io.github.palexdev.materialfx.controls.MFXLabel?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER_LEFT" prefHeight="800.0" prefWidth="1400.0" spacing="20.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.helen.hms.controller.UpdateAccountantController">
+   <children>
+      <VBox alignment="CENTER" prefHeight="800.0" prefWidth="356.0" spacing="20.0" style="-fx-background-color: #2e86c1;">
+         <children>
+            <MFXLabel lineStrokeWidth="0.0" maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent;" text="Search Accountant">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </MFXLabel>
+            <MFXButton fx:id="add" maxWidth="1.7976931348623157E308" onMouseClicked="#onMouseClicked" style="-fx-background-color: transparent;" text="Add Accountant" textFill="WHITE">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
+            <MFXButton maxWidth="1.7976931348623157E308" onMouseClicked="#onMouseClicked" style="-fx-background-color: transparent;" text="Update Accountant" textFill="WHITE">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
+            <MFXButton maxWidth="1.7976931348623157E308" onMouseClicked="#onMouseClicked" style="-fx-background-color: transparent;" text="Remove Accountant" textFill="WHITE">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
+            <MFXButton maxWidth="1.7976931348623157E308" onMouseClicked="#onMouseClicked" style="-fx-background-color: transparent;" text="All Accountants" textFill="WHITE">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
+         </children>
+      </VBox>
+      <VBox fx:id="root" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" spacing="40.0" style="-fx-background-color: #fff;" HBox.hgrow="ALWAYS">
+         <children>
+            <MFXLabel animateLines="false" lineStrokeWidth="0.0" text="Update Accountant">
+               <font>
+                  <Font name="Bell MT" size="35.0" />
+               </font>
+            </MFXLabel>
+            <GridPane hgap="5.0" maxWidth="-Infinity" prefHeight="562.0" prefWidth="560.0" vgap="5.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.20001220703125" minWidth="10.0" prefWidth="174.4000244140625" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="425.5999755859375" minWidth="10.0" prefWidth="425.5999755859375" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <MFXLabel alignment="CENTER_LEFT" animateLines="false" lineStrokeWidth="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="43.0" prefWidth="139.0" text="First Name" unfocusedLineColor="WHITE">
+                     <font>
+                        <Font name="Bell MT" size="20.0" />
+                     </font>
+                  </MFXLabel>
+                  <MFXLabel alignment="CENTER_LEFT" animateLines="false" lineStrokeWidth="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="43.0" prefWidth="139.0" text="Last Name" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="Bell MT" size="20.0" />
+                     </font>
+                  </MFXLabel>
+                  <MFXLabel alignment="CENTER_LEFT" animateLines="false" lineStrokeWidth="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="173.0" text="Qualification" GridPane.rowIndex="3">
+                     <font>
+                        <Font name="Bell MT" size="20.0" />
+                     </font>
+                  </MFXLabel>
+                  <MFXLabel alignment="CENTER_LEFT" animateLines="false" lineStrokeWidth="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="173.0" text="Username" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="Bell MT" size="20.0" />
+                     </font>
+                  </MFXLabel>
+                  <MFXTextField fx:id="firstName" animateLines="false" lineStrokeWidth="0.0" maxHeight="1.7976931348623157E308" promptText="eg: John" GridPane.columnIndex="1">
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </MFXTextField>
+                  <MFXTextField fx:id="lastName" animateLines="false" lineStrokeWidth="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="28.0" prefWidth="426.0" promptText="eg: Doe" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </MFXTextField>
+                  <MFXTextField fx:id="username" animateLines="false" lineStrokeWidth="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="58.0" prefWidth="403.0" promptText="eg: john" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </MFXTextField>
+                  <MFXButton defaultButton="true" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onMouseClicked="#onMouseClicked" style="-fx-background-color: #2e86c1;" text="Save" textFill="WHITE" GridPane.columnSpan="2" GridPane.rowIndex="8">
+                     <font>
+                        <Font name="Bell MT" size="26.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </MFXButton>
+                  <MFXLabel alignment="CENTER_LEFT" animateLines="false" lineStrokeWidth="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="173.0" text="Specialty" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Bell MT" size="20.0" />
+                     </font>
+                  </MFXLabel>
+                  <MFXLabel alignment="CENTER_LEFT" animateLines="false" lineStrokeWidth="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="173.0" text="Password" GridPane.rowIndex="7">
+                     <font>
+                        <Font name="Bell MT" size="20.0" />
+                     </font>
+                  </MFXLabel>
+                  <MFXTextField fx:id="password" animateLines="false" lineStrokeWidth="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="28.0" prefWidth="426.0" promptText="eg: 12345" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </MFXTextField>
+                  <MFXLabel alignment="CENTER_LEFT" animateLines="false" lineStrokeWidth="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="173.0" text="Gender" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Bell MT" size="20.0" />
+                     </font>
+                  </MFXLabel>
+                  <MFXComboBox fx:id="specialty" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <MFXComboBox fx:id="qualification" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <MFXComboBox fx:id="gender" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <MFXLabel alignment="CENTER_LEFT" animateLines="false" lineStrokeWidth="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="173.0" text="Phone" GridPane.rowIndex="5">
+                     <font>
+                        <Font name="Bell MT" size="20.0" />
+                     </font>
+                  </MFXLabel>
+                  <MFXTextField fx:id="phone" animateLines="false" lineStrokeWidth="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="28.0" prefWidth="426.0" promptText="eg: 0801123" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <padding>
+                        <Insets left="10.0" right="10.0" />
+                     </padding>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </MFXTextField>
+               </children>
+            </GridPane>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</HBox>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXLabel?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="800.0" prefWidth="1400.0" spacing="10.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.helen.hms.controller.AdminController">
+   <children>
+      <MFXLabel lineStrokeWidth="0.0" prefHeight="45.0" prefWidth="495.0" promptText="" style="-fx-background-color: transparent;" text="ADMIN PAGE" unfocusedLineColor="WHITE">
+         <font>
+            <Font name="Arial Black" size="25.0" />
+         </font>
+         <lineColor>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </lineColor>
+      </MFXLabel>
+      <BorderPane prefHeight="200.0" prefWidth="1000.0">
+         <left>
+            <VBox alignment="CENTER" spacing="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <MFXButton contentDisplay="TOP" defaultButton="true" onMouseClicked="#onMouseClicked" rippleColor="#793c3c" text="Accountant">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="300.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/accountant.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </MFXButton>
+                  <MFXButton alignment="CENTER" contentDisplay="TOP" defaultButton="true" onMouseClicked="#onMouseClicked" rippleColor="#793c3c" text="Admin">
+                     <graphic>
+                        <ImageView fitHeight="300.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/admin.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </MFXButton>
+               </children>
+            </VBox>
+         </left>
+         <right>
+            <VBox spacing="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <MFXButton contentDisplay="TOP" defaultButton="true" onMouseClicked="#onMouseClicked" rippleColor="#793c3c" text="Nurse">
+                     <graphic>
+                        <ImageView fitHeight="300.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/nurse.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </MFXButton>
+                  <MFXButton contentDisplay="TOP" defaultButton="true" onMouseClicked="#onMouseClicked" rippleColor="#793c3c" text="Doctor">
+                     <graphic>
+                        <ImageView fitHeight="300.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/doctor.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </MFXButton>
+               </children>
+            </VBox>
+         </right>
+         <top>
+            <MFXButton contentDisplay="TOP" defaultButton="true" onMouseClicked="#onMouseClicked" rippleColor="#793c3c" text="Receptionist" BorderPane.alignment="CENTER">
+               <graphic>
+                  <ImageView fitHeight="300.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/receptionist.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
+         </top>
+         <bottom>
+            <MFXButton contentDisplay="TOP" defaultButton="true" onMouseClicked="#onMouseClicked" rippleColor="#793c3c" text="Patient" BorderPane.alignment="CENTER">
+               <graphic>
+                  <ImageView fitHeight="300.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/patient.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MFXButton>
+         </bottom>
+         <center>
+            <MFXLabel lineStrokeWidth="0.0" prefHeight="45.0" prefWidth="495.0" promptText="" style="-fx-background-color: transparent;" text="What do you want to manage today?" unfocusedLineColor="WHITE" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Brush Script MT Italic" size="58.0" />
+               </font>
+               <lineColor>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </lineColor>
+            </MFXLabel>
+         </center>
+         <padding>
+            <Insets left="100.0" right="100.0" />
+         </padding>
+      </BorderPane>
+      <MFXButton fx:id="signout" onMouseClicked="#onMouseClicked" text="Sign out">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font size="20.0" />
+         </font>
+         <padding>
+            <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
+         </padding>
+      </MFXButton>
+   </children>
+</VBox>
