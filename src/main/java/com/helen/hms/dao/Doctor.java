@@ -9,15 +9,13 @@ import java.util.List;
 
 
 public class Doctor {
+    // Overview: manages doctor object
     private long id;
     private String username, password, firstName, lastName;
     private Qualification qualification;
     private long phone;
     private Gender gender;
     private Specialty specialty;
-
-//    List<Patient> patientList;
-
 
     public Doctor(long id, String username, String password, String firstName, String lastName, Qualification qualification, long phone, Gender gender, Specialty specialty) {
         this.id = id;

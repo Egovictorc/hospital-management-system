@@ -7,10 +7,12 @@ import java.io.IOException;
 import java.sql.*;
 
 public class DBPatient extends DB<Patient> {
+    // Overview: manages database connectivity for patient objects
 
     @Override
     public Patient getById(int id) {
-        // RETRIEVE A SINGLE PATIENT BY ID
+        // EFFECTS: returns a single patient with the provided id from the database
+
         String sql = "Select * from patient where id=?"+id;
         Patient p = null;
         try {
@@ -28,6 +30,9 @@ public class DBPatient extends DB<Patient> {
 
     @Override
     public int updatePerson(Patient p) {
+        // MODIFIES: patient table in the database
+        // EFFECTS: return 1 if patient table was successfully updated else return zero
+
         int rows = 0;
         try {
             String sql = "update patient set firstName =?, lastName= ?, Sickness = ?, discharged= ?, doctor_id = ? where id=?";
@@ -48,7 +53,8 @@ public class DBPatient extends DB<Patient> {
 
     @Override
     public Patient getByUsername(String username) {
-        // RETRIEVE A SINGLE STAFF BY ID
+        // EFFECTS: returns a single patient object with the provided username from the database
+
         String sql = "Select * from patient where firstname=?";
         Patient p = null;
         try {
@@ -69,6 +75,9 @@ public class DBPatient extends DB<Patient> {
 
     @Override
     public int registerPerson(Patient p) {
+        //MODIFIES: Patient table in the database
+        // EFFECTS: add patient object to database, returns an integer representing the number of records inserted
+
         int rows = 0;
         try {
             String sql = "INSERT INTO patient (firstName, lastName, Sickness, discharged, doctor_id) values(?, ?, ?, ?, ?)";
@@ -92,6 +101,9 @@ public class DBPatient extends DB<Patient> {
 
     @Override
     public int removePerson(Patient p) {
+        //MODIFIES: Patient table in the database
+        // EFFECTS: remove patient object from the database, returns an integer representing the number of records deleted
+
         int rows = 0;
         try {
             String sql = "DELETE from patient where id= ?";

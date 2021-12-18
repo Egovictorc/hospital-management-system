@@ -3,12 +3,16 @@ package com.helen.hms.dao;
 import java.time.LocalDate;
 
 public class Patient {
+    // Overview: manages Patient object
     private int id, doctorId;
     private String firstName, lastName, sickness;
     private LocalDate dateAdmitted;
     private boolean discharged;
 
     public Patient(String firstName, String lastName, String sickness, LocalDate dateAdmitted, boolean discharged, int doctorId) {
+        // MODIFIES: this
+        //EFFECTS: initializes object fields
+
         this.firstName = firstName;
         this.lastName = lastName;
         this.sickness = sickness;
@@ -18,6 +22,9 @@ public class Patient {
     }
 
     public Patient(int id, String firstName, String lastName, LocalDate dateAdmitted, boolean discharged) {
+        // MODIFIES: this
+        //EFFECTS: initializes object fields
+
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -26,6 +33,9 @@ public class Patient {
     }
 
     public Patient(int id, String firstName, String lastName, String sickness, LocalDate dateAdmitted, boolean discharged, int doctorId) {
+        // MODIFIES: this
+        //EFFECTS: initializes object fields
+
         this.id = id;
         this.doctorId = doctorId;
         this.firstName = firstName;

@@ -2,6 +2,8 @@ package com.helen.hms.dao;
 
 
 public class Staff {
+    // Overview: manages Staff objects
+
     private int id;
     private long phone;
     private String username, firstName, lastName, email, address;
@@ -11,6 +13,8 @@ public class Staff {
     private Gender gender;
 
     public Staff(int id, String username, String password) {
+        // MODIFIES: this
+        //EFFECTS: initializes object fields
         super();
         this.id = id;
         this.username = username;
@@ -19,6 +23,8 @@ public class Staff {
     }
 
     public Staff(String username, String password, Department department) {
+        // MODIFIES: this
+        //EFFECTS: initializes object fields
         super();
         this.username = username;
         this.password = password;
@@ -26,6 +32,8 @@ public class Staff {
     }
 
     public Staff(int id, String username, String password, Department department) {
+        // MODIFIES: this
+        //EFFECTS: initializes object fields
         super();
         this.id = id;
         this.username = username;
@@ -34,6 +42,8 @@ public class Staff {
     }
 
     public Staff(long phone, String firstName, String lastName, String username, String email, String address, Department department, Gender gender) {
+        // MODIFIES: this
+        //EFFECTS: initializes object fields
         this.phone = phone;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -45,6 +55,8 @@ public class Staff {
     }
 
     public Staff(int id, long phone, String firstName, String lastName, String username, String email, String address, Department department, Gender gender) {
+        // MODIFIES: this
+        //EFFECTS: initializes object fields
         this.id = id;
         this.phone = phone;
         this.firstName = firstName;
@@ -57,6 +69,8 @@ public class Staff {
     }
 
     public Staff(int id, long phone, String firstName, String lastName, String username, String password, String email, String address, Department department, Gender gender) {
+        // MODIFIES: this
+        //EFFECTS: initializes object fields
         this.id = id;
         this.password = password;
         this.phone = phone;

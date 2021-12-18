@@ -7,6 +7,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class PersonFactory {
+    // Overview: manages object collections
+
     private static ObservableList<Doctor> doctors = FXCollections.observableArrayList();
     private static Doctor selectedDoctor;
 

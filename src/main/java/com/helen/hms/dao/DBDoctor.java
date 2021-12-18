@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DBDoctor extends DB<Doctor> {
-    final static private String URL = "jdbc:mysql://localhost:3306/", USERNAME = "root", PASSWORD = "root", DATABASE = "hms";
+    // Overview: manages database connectivity for doctor objects
 
     public List<Staff> getAllStaff() {
-        // RETRIEVE ALL STAFF
+        //EFFECTS: returns all staff from database
         List<Staff> staff = new ArrayList<>();
         String sql = "SELECT * FROM staff";
 
@@ -34,7 +34,8 @@ public class DBDoctor extends DB<Doctor> {
 
     @Override
     public Doctor getById(int id) {
-        // RETRIEVE A SINGLE STAFF BY ID
+        // EFFECTS: returns a single doctor with the provided id from the database
+
         String sql = "Select * from doctor where id=?"+id;
         Doctor d = null;
         try {
@@ -52,6 +53,9 @@ public class DBDoctor extends DB<Doctor> {
 
     @Override
     public int updatePerson(Doctor d) {
+        // MODIFIES: doctor table in the database
+        // EFFECTS: return 1 if doctor table was successfully updated else return zero
+
         int rows = 0;
         try {
             String sql = "update doctor set firstName =?, lastName= ?, username = ?, password= ?, phone= ?, gender=?, qualification=?, specialty=? where id=?";
@@ -75,7 +79,8 @@ public class DBDoctor extends DB<Doctor> {
 
     @Override
     public Doctor getByUsername(String username) {
-        // RETRIEVE A SINGLE STAFF BY ID
+        // EFFECTS: returns a single doctor object with the provided username from the database
+
         String sql = "Select * from doctor where username=?";
         Doctor d = null;
         try {
@@ -96,6 +101,9 @@ public class DBDoctor extends DB<Doctor> {
 
     @Override
     public int registerPerson(Doctor d) {
+        //MODIFIES: Doctor table in the database
+        // EFFECTS: add doctor object to database, returns an integer representing the number of records inserted
+
         int rows = 0;
         try {
             String sql = "INSERT INTO Doctor (firstName, lastName, Username, Password, Phone, Gender, Qualification, Specialty) values(?, ?, ?, ?, ?, ?, ?, ?)";
@@ -122,6 +130,9 @@ public class DBDoctor extends DB<Doctor> {
 
     @Override
     public int removePerson(Doctor d) {
+        //MODIFIES: Doctor table in the database
+        // EFFECTS: remove doctor object from the database, returns an integer representing the number of records deleted
+
         int rows = 0;
         try {
             String sql = "DELETE from doctor where id= ?";
@@ -133,16 +144,5 @@ public class DBDoctor extends DB<Doctor> {
             UtilityClass.showAlert("Error registering staff", e.getMessage());
         }
         return rows;
-    }
-
-    public static void main(String[] args) throws SQLException {
-        conn = DB.connect();
-        String sql = "Select * from staff";
-        PreparedStatement ptmt = conn.prepareStatement(sql);
-        ResultSet rs = ptmt.executeQuery();
-
-        while (rs.next()) {
-            System.out.println(rs.getInt(1) + " " + rs.getString(1));
-        }
     }
 }

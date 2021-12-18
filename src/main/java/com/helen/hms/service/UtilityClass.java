@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 public class UtilityClass {
+    // Overview: manages error messages and history
+
     private static Alert alert;
     private static LinkedList<String> history = new LinkedList<>();
 

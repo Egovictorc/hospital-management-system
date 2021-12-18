@@ -9,9 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DBStaff extends DB<Staff> {
+// Overview: manages database connectivity for Staff objects
 
     public List<Staff> getAllStaff() {
-        // RETRIEVE ALL STAFF
+        //EFFECTS: returns all staff from database
         List<Staff> staff = new ArrayList<>();
         String sql = "SELECT * FROM staff";
 
@@ -29,7 +30,7 @@ public class DBStaff extends DB<Staff> {
         return staff;
     }
 
-    public Staff getStaffById(long id) {
+ /*   public Staff getStaffById(long id) {
         // RETRIEVE A SINGLE STAFF BY ID
         String sql = "Select * from staff where id=?";
         Staff s = null;
@@ -44,11 +45,13 @@ public class DBStaff extends DB<Staff> {
             e.printStackTrace();
         }
         return s;
-    }
+    }*/
 
     @Override
     public int registerPerson(Staff s) {
-        // check if user already exists
+        //MODIFIES: Staff table in the database
+        // EFFECTS: add staff object to database, returns an integer representing the number of records inserted
+
         String sql = "Select * from staff where username= ?";
         int rows = 0;
         try {
@@ -73,17 +76,30 @@ public class DBStaff extends DB<Staff> {
         } finally {
             return rows;
         }
-
     }
 
     @Override
     int removePerson(Staff staff) {
-        return 0;
+        //MODIFIES: Staff table in the database
+        // EFFECTS: remove staff object from the database, returns an integer representing the number of records deleted
+
+        int rows = 0;
+        try {
+            String sql = "DELETE from staff where id= ?";
+            PreparedStatement ptmt = conn.prepareStatement(sql);
+            ptmt.setInt(1, staff.getId());
+            rows = ptmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+            UtilityClass.showAlert("Error registering staff", e.getMessage());
+        }
+        return rows;
     }
 
     @Override
     public Staff getByUsername(String username) {
-        // RETRIEVE A SINGLE STAFF BY ID
+        // EFFECTS: returns a single staff object with the provided username from the database
+
         String sql = "Select * from staff where username= ?";
         Staff s = null;
         try {
@@ -105,7 +121,8 @@ public class DBStaff extends DB<Staff> {
 
     @Override
     Staff getById(int id) {
-        // RETRIEVE A SINGLE STAFF BY ID
+        // EFFECTS: returns a single Staff with the provided id from the database
+
         String sql = "Select * from staff where id=?" + id;
         Staff s = null;
         try {
@@ -123,6 +140,9 @@ public class DBStaff extends DB<Staff> {
 
     @Override
     public int updatePerson(Staff s) {
+        // MODIFIES: Staff table in the database
+        // EFFECTS: return 1 if staff table was successfully updated else return zero
+
         int rows = 0;
         try {
             String sql = "update staff set firstName =?, lastName=?, email=?, phone=?, address=?, gender=?, department=? where id =?";
@@ -144,33 +164,4 @@ public class DBStaff extends DB<Staff> {
         return rows;
     }
 
-
-    public static int removePerson(Patient p) {
-        int rows = 0;
-        try {
-            String sql = "INSERT INTO patient (firstName, lastName, Sickness, discharged, doctor_id) values(?, ?, ?, ?, ?)";
-            PreparedStatement ptmt = conn.prepareStatement(sql);
-            ptmt.setString(1, p.getFirstName());
-            ptmt.setString(2, p.getLastName());
-            ptmt.setString(3, p.getSickness());
-            ptmt.setBoolean(4, p.isDischarged());
-            ptmt.setInt(5, p.getDoctorId());
-            rows = ptmt.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            UtilityClass.showAlert("Error registering staff", e.getMessage());
-        }
-        return rows;
-    }
-
-    public static void main(String[] args) throws SQLException {
-        conn = DB.connect();
-        String sql = "Select * from staff";
-        PreparedStatement ptmt = conn.prepareStatement(sql);
-        ResultSet rs = ptmt.executeQuery();
-
-        while (rs.next()) {
-            System.out.println(rs.getInt(1) + " " + rs.getString(1));
-        }
-    }
 }
